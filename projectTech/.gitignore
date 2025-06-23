@@ -1,5 +1,5 @@
 # Entorno virtual local
-.venv/
+venv/
 
 # Cachés de Python
 __pycache__/
