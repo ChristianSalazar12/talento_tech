@@ -1,4 +1,4 @@
-#add the description of the code
+ 
 # This code implements a scientific calculator that allows users to perform various mathematical operations.
 # The calculator supports addition, subtraction, multiplication, division, exponentiation, square root,
 # logarithm base 10, and trigonometric functions (sine, cosine, tangent
