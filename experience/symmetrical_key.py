@@ -2,6 +2,7 @@
 #Symmetric Key Encryption Example
 #This script demonstrates how to generate a symmetric key, encrypt a message, 
 # and decrypt it using the cryptography library in Python. 
+#important: clone this file and the other files will genererate when you run this script.
 #Author: Christian Salazar
 
 # Libraries
