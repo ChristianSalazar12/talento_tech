@@ -1,3 +1,11 @@
+#add description of the code
+
+#This script generates RSA asymmetric keys, allows signing messages with the private key,
+#and verifies the authenticity of messages using the public key. It uses the cryptography library for key
+#generation, encryption, decryption, signing, and signature verification. The keys are saved in PEM format files.
+#important: clone this file and the other files will generate when you run this script.
+#author: Christian Salazar
+
 import base64
 from cryptography.fernet import Fernet
 from cryptography.hazmat.primitives.asymmetric import rsa, padding
