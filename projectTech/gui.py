@@ -10,6 +10,13 @@ from mnemotecnia import token_for_word
 from stroke import force_stroke_cessar, force_stroke_vigenere
 
 
+# This function registers a password and an extra text input.
+# It validates the inputs, generates tokens from the password and extra text,
+# encrypts the tokens using a double encryption method,
+# and saves the encrypted password and its mnemotechnic version to a JSON file.
+# It also updates the GUI with the results, including the security level of the password,
+# the generated tokens, the encrypted password, and its mnemotechnic version.
+# If any input is missing, it shows an error message.
 def register():
     password = password_entry.get()
     extra = extra_entry.get()
@@ -40,7 +47,12 @@ def register():
 
     messagebox.showinfo("Registro exitoso", "Datos guardados correctamente.")
 
-
+# This function handles the login process.
+# It retrieves the input from the login entry field,
+# reads the registered data from a JSON file,
+# and checks if the input matches either the encrypted password or the mnemotechnic version.
+# If the input matches, it shows a success message; otherwise, it shows an error message.
+# If the JSON file is not found, it prompts the user to register a password first.
 def login():
     logeo = login_entry.get()
     try:
@@ -57,7 +69,17 @@ def login():
     else:
         messagebox.showerror("Error de login", "Contraseña incorrecta.")
 
-
+# This function simulates an attack by performing a brute-force decryption
+# on the input text using both the Caesar cipher and the Vigenère cipher.
+# It retrieves the encrypted input and an optional target key from the GUI,
+# and checks if the input is empty. If it is, it shows an error message.
+# If the input is valid, it calls the brute-force functions for both ciphers,
+# collects the results, and formats them into a readable output.
+# The output includes the results of the brute-force attempts, the found keys (if any),
+# and the total time taken for each cipher. Finally, it displays the output in a text widget in the GUI.
+# If no target is specified, it defaults to None.
+# The results are displayed in a text widget, showing the decrypted texts for each shift or key
+# and indicating whether a key was found for each cipher.   
 def simulate_attack():
     encrypted_input = input_ciphered_entry.get()
     target = target_entry.get().strip()
@@ -214,5 +236,3 @@ tk.Button(
 ).pack(pady=10)
 
 window.mainloop()
-
- 

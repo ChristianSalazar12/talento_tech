@@ -1,3 +1,8 @@
+#add the description of the file
+# This file contains lists of Spanish words categorized into adjetives, nouns, verbs, and symbols.
+# These lists can be used for various purposes such as language learning, game development, or
+# text generation.
+
 adjetives = [
     "rápido", "lento", "fácil", "difícil", "inteligente", "tonto",
     "brillante", "oscuro", "alegre", "triste", "fuerte", "débil",
