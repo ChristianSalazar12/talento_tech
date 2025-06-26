@@ -78,3 +78,37 @@ This application is designed to educate users about **password security**, **enc
 ```bash
 git clone https://github.com/your-username/Password-Encryption-App.git
 cd Password-Encryption-App
+
+## **Instruction for Ubuntu**
+
+sudo apt update
+
+sudo apt install python3-venv -y  # Instalar si no lo tienes
+
+# Crear entorno (recommended)
+python3 -m venv venv
+
+# Activar entorno
+source venv/bin/activate
+
+#Option 1: Install dependences
+pip install -r requirements.txt  
+#option 2: for dependences (only the option 1 fails)
+pip install customtkinter nltk
+
+## **Instruction for Windows**
+
+# Crear entorno
+python -m venv venv
+
+# Activar entorno
+.\venv\Scripts\activate
+
+#Option 1: Install dependences
+pip install -r requirements.txt  
+
+#option 2: for dependences (only the option 1 fails)
+pip install customtkinter nltk
+
+##FINALLY, run the project
+python gui.py
