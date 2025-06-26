@@ -53,18 +53,19 @@ print(decrypt_cesar("fkulvwldq", 3))
 # The function returns the decrypted text as a string.  
 def decrypt_vigenere(ciphertext, key):
     resultado = ""
-    key = (key * (len(ciphertext) // len(key) + 1))[: len(ciphertext)]
+    key_index = 0
+    key = key.lower()
 
-    for i, char in enumerate(ciphertext):
+    for char in ciphertext:
         if char.isalpha():
             base = ord("A") if char.isupper() else ord("a")
-            key_char = key[i].lower()
-            shift = ord(key_char) - ord("a")
+            key_char = key[key_index % len(key)]
+            shift = ord(key_char) - ord('a')
             resultado += chr((ord(char) - base - shift) % 26 + base)
+            key_index += 1
         else:
-            resultado += char
+            resultado += char  # No se modifica, tampoco avanza la clave
     return resultado
-
 # # This function performs a brute-force attack on the Vigenère cipher by trying all combinations
 # of keys up to a specified maximum length. It returns a list of results with the 
 # decrypted text for each key, and the found key if it matches the target.
@@ -93,7 +94,7 @@ def force_stroke_vigenere(ciphertext, max_length=2, target=None):
         intento = decrypt_vigenere(ciphertext, key)
         resultados.append((key, intento))
         if target and intento.lower() == target.lower():
-            clave_encontrada = intento
+            clave_encontrada = key
             break
 
     fin = time.time()

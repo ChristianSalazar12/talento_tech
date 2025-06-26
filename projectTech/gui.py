@@ -286,13 +286,12 @@ ctk.CTkLabel(
     input_stroke, text="🛠️ Configuración del Ataque", font=("Arial", 18, "bold")
 ).pack(pady=10)
 
-ctk.CTkLabel(input_stroke, text="Clave esperada:").pack(anchor="w")
+ctk.CTkLabel(input_stroke, text="Clave esperada:").pack(pady=(15, 5), padx=10, fill="x")
 target_entry = ctk.CTkEntry(input_stroke, placeholder_text="Clave a buscar")
-target_entry.pack(pady=5, fill="x")
-
-ctk.CTkLabel(input_stroke, text="Texto cifrado:").pack(anchor="w")
+target_entry.pack(pady=(15, 5), padx=10, fill="x")
+ctk.CTkLabel(input_stroke, text="Texto cifrado:").pack(pady=(15, 5), padx=10, fill="x")
 input_ciphered_entry = ctk.CTkEntry(input_stroke, placeholder_text="Texto cifrado")
-input_ciphered_entry.pack(pady=5, fill="x")
+input_ciphered_entry.pack(pady=(15, 5), padx=10, fill="x")
 
 ctk.CTkButton(input_stroke, text="Ejecutar Ataque", fg_color="#c0392b", command=simulate_attack).pack(pady=15)
 
